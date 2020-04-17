@@ -114,15 +114,23 @@ $ terraform apply out.plan
 Details are [here](https://docs.microsoft.com/en-us/azure/aks/azure-ad-integration#create-an-rbac-binding).
 
 ```
+
+# load env vars
+
 $ CLUSTER_NAME=aadk8s
 $ RESOURCE_GROUP_NAME=aadk8srg
+
+
+# create user
+
+$ az ad user create --display-name <display_name> --password <password> --user-principal-name <username>@<E-mail of LifeID>.onmicrosoft.com
 
 
 # ADMIN
 
 $ az aks get-credentials -n $CLUSTER_NAME -g $RESOURCE_GROUP_NAME --admin
 
-# edit 'rbac/rbac-aad-user.yaml' with your user
+# edit 'rbac/rbac-aad-user.yaml' with your user: '<username>@<E-mail of LifeID>.onmicrosoft.com'
 $ k apply -f rbac/rbac-aad-user.yaml
 
 $ az aks get-credentials -n $CLUSTER_NAME -g $RESOURCE_GROUP_NAME
