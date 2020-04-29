@@ -1,7 +1,11 @@
 ### Azure Acitve Directory + AKS
 
+AKS secured by Azure Active Directory base on MS Graph instead of AAD Graph.  
+
 Official Azure doc [here](https://docs.microsoft.com/en-us/azure/aks/azure-ad-integration).  
 Similar repo [here](https://github.com/jcorioland/aks-rbac-azure-ad) but out-of-date..
+
+AKS will be configured to use Azure AD for user authentication. In this configuration, you can sign in to an AKS cluster by using your Azure AD authentication token.
 
 
 #### # manifest
