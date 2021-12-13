@@ -7,7 +7,7 @@ set -e
 
 
 # create AD server application
-# https://docs.microsoft.com/en-us/cli/azure/ad/app?view=azure-cli-latest
+# https://docs.microsoft.com/en-us/cli/azure/ad/app?view=azure-cli-latest#az_ad_app_create
 # --password == Certificates & secrets >> New client secret
 echo "Creating server application..."
 az ad app create \

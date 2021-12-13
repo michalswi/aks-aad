@@ -95,22 +95,18 @@ Details are [here](https://docs.microsoft.com/en-us/azure/aks/azure-ad-integrati
 ```
 # load vars from the client script
 
-$ export TF_VAR_rbac_server_app_id=<> &&\
+export TF_VAR_rbac_server_app_id=<> &&\
 export TF_VAR_rbac_server_app_secret=<> &&\
 export TF_VAR_rbac_client_app_id=<>
 
-# When you create an Azure AD-enabled AKS cluster, this value is called the tenant ID
-# Azure Active Directory >> Properties >> Directory ID
-
-export TF_VAR_tenant_id=<>
-
-export TF_VAR_client_id=<> && \
+export TF_VAR_tenant_id=<> &&\
+export TF_VAR_client_id=<> &&\
 export TF_VAR_client_secret=<>
 
-$ cd ./basic
-$ terraform init
-$ terraform plan -out out.plan
-$ terraform apply out.plan
+cd ./aks
+terraform init
+terraform plan -out out.plan
+terraform apply out.plan
 ```
 
 #### # RBAC

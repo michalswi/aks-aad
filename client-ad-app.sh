@@ -68,7 +68,7 @@ az ad sp create --id ${AD_CLIENT_APP_ID}
 # remove manifest-client.json
 rm -rf ./manifest-client.json
 
-# grant 'API permissions' (in UI: AD >> your app >> API permissions) to the client application
+# grant 'API permissions' (in UI: portal / AD / <your_app> / API permissions) to the client application
 echo "Granting permissions to the client application..."
 AD_CLIENT_APP_RESOURCES_API_IDS=$(az ad app permission list --id $AD_CLIENT_APP_ID --query [].resourceAppId --out tsv | xargs echo)
 for RESOURCE_API_ID in $AD_CLIENT_APP_RESOURCES_API_IDS;
